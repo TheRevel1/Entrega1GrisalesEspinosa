@@ -16,7 +16,8 @@ div-tarjeta {
 }
 
 h2 {
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 
 .img-videojuego {
@@ -27,6 +28,16 @@ h2 {
 /*MEDIA QUERY*/
 
 @media (min-width: 100px) and (max-width: 1000px) {
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+
     .img-videojuego {
         width: 100%;
         border: 50px black;
