@@ -13,7 +13,7 @@ function traerCarrito(videojuegosCarrito) {
     } else {
         let totalPrecio = 0
         videojuegosCarrito.forEach(videojuego => {
-            const tarjeta = document.createElement("div-tarjeta")
+            const tarjeta = document.createElement("tarjeta")
             tarjeta.classList.add("tarjeta")
             tarjeta.innerHTML =
                 `<h4>${videojuego.nombre}</h4>

@@ -168,7 +168,7 @@ let productosCarrito = []
 function traerVideojuegos(videojuegosCatalogo) {
 
     videojuegosCatalogo.forEach(videojuego => {
-        const tarjeta = document.createElement("div-tarjeta")
+        const tarjeta = document.createElement("tarjeta")
         tarjeta.classList.add("tarjeta")
         tarjeta.innerHTML =
                             `<h2>${videojuego.nombre}</h2>
