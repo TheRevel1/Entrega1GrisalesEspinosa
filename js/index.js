@@ -105,7 +105,7 @@ const videojuegos = [
         sinopsis: "«Me llamo... Maria», dice la mujer, sonriendo. Su rostro, su voz... Es igual que ella.",
         generos: "Terror",
         precio: 69.99,
-        img: src="../assets/IgwsFz9BiBrFvyV7pIWpoVgd.jpg",
+        img: "./assets/IgwsFz9BiBrFvyV7pIWpoVgd.jpg",
     },
 
     {
