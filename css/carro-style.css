@@ -1,6 +1,7 @@
 header {
     display: flex;
     align-items: center;
+    align-items: center;
     justify-content: space-evenly;
     background-color: gray;
     color: white;
@@ -9,6 +10,7 @@ header {
 
 a {
     color: white;
+
 }
 
 .bienvenida {
