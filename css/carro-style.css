@@ -1,6 +1,6 @@
 header {
+    border-radius: 15px;
     display: flex;
-    align-items: center;
     align-items: center;
     justify-content: space-evenly;
     background-color: gray;
@@ -30,24 +30,92 @@ body {
     gap: 0px;
 }
 
+p {
+    text-align: center;
+}
+
 .tarjeta {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     border: 2px black;
     text-align: justify ;
     font-size: 30px;
+    gap: 10px;
+}
+
+button.continuarCompra {
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+button.vaciarProducto {
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+
+h4 {
+    margin: 0px;
+    text-align: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
 }
 
 h2 {
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 .img-videojuego {
     width: 25%;
     border: 50px black;
 }
+
+#contenedor-videojuegos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.total-precio {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-size: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+footer {
+    margin-top: 10%;
+    border-radius: 15px;
+    border-color: 1px white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: gray;
+    color: white;
+    padding: 0px;
+}
+
+#titulo-footer {
+    font-size: smaller;    
+}
+
+
+
 
 /*MEDIA QUERY*/
 
@@ -69,5 +137,25 @@ h2 {
         flex-direction: column;
         align-items: center;
     }
+
+    .tarjeta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px black;
+        text-align: justify ;
+        font-size: 30px;
+    }
+
+    button.continuarCompra {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    button.vaciarProducto {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+        
     
 }

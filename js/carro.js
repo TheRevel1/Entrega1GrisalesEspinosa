@@ -9,16 +9,18 @@ function traerCarrito(videojuegosCarrito) {
     if (videojuegosCarrito.length === 0) {
         const mensajeVacio = document.createElement("p")
         mensajeVacio.textContent = "El carro de compras está vacío."
+        
         contenedorCarrito.appendChild(mensajeVacio)
+
     } else {
         let totalPrecio = 0
         videojuegosCarrito.forEach(videojuego => {
             const tarjeta = document.createElement("tarjeta")
             tarjeta.classList.add("tarjeta")
             tarjeta.innerHTML =
-                `<h4>${videojuego.nombre}</h4>
+                            `<h4>${videojuego.nombre}</h4>
                             <p>${videojuego.precio}</p>
-                            <button class = "eliminarProducto" id=${videojuego.id}>-</button>`
+                            <button class = "eliminarProducto" id=${videojuego.id}>Remover</button>`
 
             contenedorCarrito.appendChild(tarjeta)
             totalPrecio += parseFloat(videojuego.precio)
