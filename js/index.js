@@ -171,7 +171,7 @@ function traerVideojuegos(videojuegosCatalogo) {
         const tarjeta = document.createElement("tarjeta")
         tarjeta.classList.add("tarjeta")
         tarjeta.innerHTML =
-                            `<h2>${videojuego.nombre}</h2>
+            `<h2>${videojuego.nombre}</h2>
                             <img class="img-videojuego" src=${videojuego.img} alt=${videojuego.nombre}>
                             <p>${videojuego.sinopsis}</p>
                             <p>${videojuego.precio}</p>

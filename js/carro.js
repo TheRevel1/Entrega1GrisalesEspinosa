@@ -9,7 +9,7 @@ function traerCarrito(videojuegosCarrito) {
     if (videojuegosCarrito.length === 0) {
         const mensajeVacio = document.createElement("p")
         mensajeVacio.textContent = "El carro de compras está vacío."
-        
+
         contenedorCarrito.appendChild(mensajeVacio)
 
     } else {
@@ -18,7 +18,7 @@ function traerCarrito(videojuegosCarrito) {
             const tarjeta = document.createElement("tarjeta")
             tarjeta.classList.add("tarjeta")
             tarjeta.innerHTML =
-                            `<h4>${videojuego.nombre}</h4>
+                `<h4>${videojuego.nombre}</h4>
                             <p>${videojuego.precio}</p>
                             <button class = "eliminarProducto" id=${videojuego.id}>Remover</button>`
 
@@ -40,7 +40,7 @@ function traerCarrito(videojuegosCarrito) {
             alertaGracias.textContent = "Gracias por tu compra!"
             contenedorCarrito.appendChild(alertaGracias)
             e.currentTarget.disabled = true
-            }
+        }
 
         const contenedorBotonVaciar = document.createElement("div")
         contenedorBotonVaciar.classList.add("contenedor-boton-vaciar")
@@ -59,7 +59,7 @@ function traerCarrito(videojuegosCarrito) {
         contenedorCarrito.appendChild(botonContinuarCompra)
 
         contenedorCarrito.appendChild(botonVaciar)
-        
+
 
         agregarBotonEliminar()
     }
