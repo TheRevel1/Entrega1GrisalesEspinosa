@@ -36,11 +36,67 @@ function traerCarrito(videojuegosCarrito) {
         botonContinuarCompra.classList.add("continuarCompra")
 
         botonContinuarCompra.onclick = (e) => {
-            const alertaGracias = document.createElement("p")
-            alertaGracias.textContent = "Gracias por tu compra!"
-            contenedorCarrito.appendChild(alertaGracias)
+            contenedorCarrito.innerHTML = ""
+
+            const formularioPago = document.createElement("form")
+            formularioPago.classList.add("formulario-pago")
+
+            formularioPago.innerHTML = `
+                <h3>Información de pago</h3>
+                <label for="nombre">Nombres:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombres" required>
+        
+                <label for="apellido">Apellidos:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellidos" required>
+        
+                <label for="numeroTarjeta">Número de Tarjeta:</label>
+                <input type="number" id="numeroTarjeta" name="numeroTarjeta" maxlength="16" required>
+        
+                <label for="fechaExpiracion">Fecha de Caducidad (MM/AA):</label>
+                <input type="text" id="fechaExpiracion" name="fechaExpiracion" placeholder="MM/AA" maxlength="5" required>
+        
+                <label for="cvc">CVC:</label>
+                <input type="text" id="cvc" name="cvc" maxlength="3" required>
+
+                <label for="pais">País:</label>
+                <input type="text" id="pais" name="pais" required>
+        
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>        
+        
+                <label for="codigoPostal">Código Postal:</label>
+                <input type="number" id="codigoPostal" name="codigoPostal" required>
+        
+                <button type="submit" class="finalizarCompra">Finalizar Compra</button>`
+
+            formularioPago.onsubmit = (event) => {
+                event.preventDefault()
+
+                const datosPago = {
+                    nombre: formularioPago.nombre.value,
+                    apellido: formularioPago.apellido.value,
+                    numeroTarjeta: formularioPago.numeroTarjeta.value,
+                    fechaExpiracion: formularioPago.fechaExpiracion.value,
+                    cvc: formularioPago.cvc.value,
+                    direccion: formularioPago.direccion.value,
+                    pais: formularioPago.pais.value,
+                    codigoPostal: formularioPago.codigoPostal.value,
+                }
+
+                procesarPago(datosPago)
+
+                function procesarPago(datos) {
+                    enviarDatosPago(datos)
+                }
+
+                contenedorCarrito.innerHTML = "<p>¡Pago realizado con éxito! Gracias por tu compra.</p>"
+            }
+
+            contenedorCarrito.appendChild(formularioPago)
+
             e.currentTarget.disabled = true
         }
+
 
         const contenedorBotonVaciar = document.createElement("div")
         contenedorBotonVaciar.classList.add("contenedor-boton-vaciar")
@@ -60,7 +116,6 @@ function traerCarrito(videojuegosCarrito) {
 
         contenedorCarrito.appendChild(botonVaciar)
 
-
         agregarBotonEliminar()
     }
 }
@@ -69,7 +124,6 @@ traerCarrito(carrito)
 
 function eliminarProductoDelCarrito(idProducto) {
     carrito = carrito.filter(producto => producto.id != idProducto)
-    console.log("Producto eliminado:", carrito)
 
     localStorage.setItem("productosCarrito", JSON.stringify(carrito))
 
@@ -83,5 +137,23 @@ function agregarBotonEliminar() {
             const productoId = e.currentTarget.id
             eliminarProductoDelCarrito(productoId)
         }
+    })
+}
+
+function enviarDatosPago(datos) {
+    const url = "https://therevel1.github.io/Entrega1GrisalesEspinosa/"
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(datos)
+    })
+    .then(respuesta => {
+        if (respuesta.ok) {
+        } else {
+        }
+    })
+    .catch(error => {
     })
 }
