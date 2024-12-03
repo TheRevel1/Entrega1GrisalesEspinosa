@@ -141,19 +141,26 @@ function agregarBotonEliminar() {
 }
 
 function enviarDatosPago(datos) {
-    const url = "https://therevel1.github.io/Entrega1GrisalesEspinosa/"
-    fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(datos)
-    })
-    .then(respuesta => {
-        if (respuesta.ok) {
-        } else {
-        }
-    })
-    .catch(error => {
-    })
+
+    const url = "./videojuegos.json"
+
+    fetch(url)
+
+        .then(respuesta => {
+            if (!respuesta.ok) {
+                throw new Error("No se pudo cargar el archivo .JSON local")
+            }
+            return respuesta.json()
+        })
+
+        .then(contenido => {
+            console.log("Contenido del .JSON local:", contenido)
+            console.log("Datos enviados simulados:", datos)
+
+            alert("Datos de pago simulados enviados con éxito.")
+        })
+
+        .catch(error => {
+            console.error("Error al leer el archivo .JSON:", error)
+        })
 }
