@@ -142,7 +142,7 @@ function agregarBotonEliminar() {
 
 function enviarDatosPago(datos) {
 
-    const url = "./videojuegos.json"
+    const url = "../videojuegos.json"
 
     fetch(url)
 
@@ -156,8 +156,6 @@ function enviarDatosPago(datos) {
         .then(contenido => {
             console.log("Contenido del .JSON local:", contenido)
             console.log("Datos enviados simulados:", datos)
-
-            alert("Datos de pago simulados enviados con éxito.")
         })
 
         .catch(error => {
